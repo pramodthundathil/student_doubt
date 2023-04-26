@@ -1,0 +1,43 @@
+{% extends 'login.html' %}
+{% block content %}
+<section class="contact_section layout_padding-bottom">
+    <div class="container">
+
+      <h2 class="main-heading" style="color:#fec913">
+        Registration
+
+      </h2>
+        {% for message in messages %}
+         <h6  style="color: red;"> {{message}} </h6>
+        {% endfor %}
+        <h6 style="color: red;">{{form.errors}}</h6>
+      <p class="text-center">
+
+      </p>
+      <div class="">
+        <div class="contact_section-container">
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <div class="contact-form">
+                <form method="POST">
+                    {% csrf_token %}
+                  {% for i in form  %}
+                  {{i.label}}
+                  {{i}}
+                  
+                  {% endfor %}
+                  {{form.errors}}
+                    <button type="submit" class="btn_on-hover">
+                      Register
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><br><br><br><br><br><br>
+{% endblock %}
