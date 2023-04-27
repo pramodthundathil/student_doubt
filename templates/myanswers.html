@@ -110,7 +110,7 @@
                             <th>Doubts</th>
                             <th>Answer</th>
                             <th>Date</th>
-                            <th>Delete</th>
+                            <th>Action</th>
                         </tr>
                         {% for i in doubts%}
                         <tr>
@@ -119,7 +119,8 @@
                                 {% csrf_token %}
                             <td><input type="text" name="answer" value="{{i.Answer}}"></td>
                             <td style="font-size: smaller;">{{i.Question_date}}</td>
-                            <td><button type="submit" class="btn btn-outline-info btn-sm">Update</button></td>
+                            <td><button type="submit" class="btn btn-outline-info btn-sm">Update</button> <br><br>
+                            <a href="{%url 'deleteteacherdoubt' i.QuestionID %}" class="btn btn-outline-danger" >delete</a></td>
                         </form>
 
                         </tr>

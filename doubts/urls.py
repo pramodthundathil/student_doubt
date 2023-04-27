@@ -10,6 +10,8 @@ urlpatterns = [
     path("deletedoubts/<int:pk>",views.deletedoubts,name="deletedoubts"),
     path("Myanswers",views.Myanswers,name="Myanswers"),
     path("updateanswer/<int:pk>",views.updateanswer,name="updateanswer"),
+    path("deleteteacherdoubt/<int:pk>",views.deleteteacherdoubt,name="deleteteacherdoubt"),
+    
     
     
     

@@ -71,3 +71,9 @@ def updateanswer(request,pk):
         douts.save()
         messages.info(request,"Data Updated")
         return redirect("Myanswers")
+    
+def deleteteacherdoubt(request,pk):
+    douts = Student_Doubts.objects.get(QuestionID = pk)
+    douts.delete()
+    messages.info(request,"Item deleted")
+    return redirect("Myanswers")
